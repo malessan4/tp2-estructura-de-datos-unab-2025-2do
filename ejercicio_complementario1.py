@@ -1,4 +1,8 @@
-unab = []
+unab = [{'legajo': 1635, 'nombre': 'Matias', 'apellido': 'Alessandrello', 'contrasena': 'chimango'},
+        {'legajo': 634, 'nombre': 'Carlos', 'apellido': 'Perez', 'contrasena': 'chi'},
+        {'legajo': 16, 'nombre': 'Sonia', 'apellido': 'Perez', 'contrasena': 'hola'},
+        {'legajo': 15353, 'nombre': 'Nelson', 'apellido': 'Locke', 'contrasena': 'mundo'},
+        {'legajo': 24463, 'nombre': 'Cristo', 'apellido': 'Gutierrez', 'contrasena': 'chicago'}]
 
 def ingresar_alumno():
     print("****Bienvenido al programa de ingreso de alumnos de la UNAB****")
@@ -14,13 +18,13 @@ def ingresar_alumno():
     return unab
 
 def imprimir_alumno():
-    if unab == None:
-        print("No hay alumno registrado")
+    print("***Accediendo a la Base de Datos UNAB****")
+    if not unab:
+        print("ERROR: No hay alumno registrado")
         return
     for alumno in unab:
-        print(f"{alumno[0]} {alumno[1]} {alumno[2]} {alumno[3]}")
+        print(f"Legajo: {alumno['legajo']}\nNombre: {alumno['nombre']}\nApellido: {alumno['apellido']}\nContraseña: {alumno['contrasena']}")
 
 
-imprimir_alumno()
-ingresar_alumno()
+
 imprimir_alumno()
