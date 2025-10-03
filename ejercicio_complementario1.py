@@ -12,7 +12,7 @@ def ingresar_alumno():
         nombre = input("Ingrese el nombre del alumno: ")
         apellido = input("Ingrese el apellido del alumno: ")
         contrasena = input("Ingrese la contrasena del alumno: ")
-        alumno = [legajo, nombre, apellido, contrasena]
+        alumno = {'legajo': legajo, 'nombre': nombre, 'apellido': apellido, 'contrasena': contrasena}
         unab.append(alumno)
         legajo = int(input("Ingrese el numero de legajo, ingrese 0 para salir: "))
     return unab
@@ -25,6 +25,13 @@ def imprimir_alumno():
     for alumno in unab:
         print(f"Legajo: {alumno['legajo']}\nNombre: {alumno['nombre']}\nApellido: {alumno['apellido']}\nContraseña: {alumno['contrasena']}")
 
+def legajo_menor(lista_alumnos):
+    alumnos_ordenados = sorted(lista_alumnos, key=lambda x: x['legajo'])
+    print("***Alumnos ordenados por legajo***")
+    for alumno in alumnos_ordenados:
+        print(f"Legajo: {alumno['legajo']}\nNombre: {alumno['nombre']}\nApellido: {alumno['apellido']}\nContraseña: {alumno['contrasena']}")
 
 
 imprimir_alumno()
+print()
+legajo_menor(unab)
